@@ -25,13 +25,13 @@ public class PollController {
 
         return "list-answers";
     }
-  @RequestMapping("/save")
+  @PostMapping("/save")
     public String savePollAnswers(@ModelAttribute("answers")Poll poll){
         pollService.save(poll);
 
          return "redirect:/poll/list";
     }
-    @RequestMapping("/showFormForAdd")
+    @GetMapping("/showFormForAdd")
     public String showFormForAdd(Model model){
 
         Poll poll = new Poll();
@@ -40,7 +40,7 @@ public class PollController {
 
         return "poll-form";
     }
-    @RequestMapping("/showFormForUpdate")
+    @GetMapping("/showFormForUpdate")
     public String showFormForUpdate(@RequestParam("id")long id, Model model){
 
         Poll poll = pollService.findById(id);
@@ -49,7 +49,7 @@ public class PollController {
 
         return "poll-form";
     }
-    @RequestMapping("/delete")
+    @GetMapping("/delete")
     public String delete(@RequestParam("id") long id){
 
         pollService.deleteById(id);

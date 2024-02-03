@@ -40,11 +40,11 @@
             <td th:text="${tempPoll.frequency}"></td>
             <td th:text="${tempPoll.quality}"></td>
             <td>
-                <a th:href="@{/poll/showFormForUpdate(id=${tempPoll.id})}"
+                <a th:href="@{/poll/showFormForUpdate(id=${tempPoll.id})}" methods="get"
                     class="btn btn-warning btn-sm">
                     Update
                 </a>
-                <a th:href="@{/poll/delete(id=${tempPoll.id})}"
+                <a th:href="@{/poll/delete(id=${tempPoll.id})}" methods="get"
                    class="btn btn-danger btn-sm"
                     onclick="if (!(confirm('Are you sure you want to delete this poll answer?'))) return false">
                     Delete
