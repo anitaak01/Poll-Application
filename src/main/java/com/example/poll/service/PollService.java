@@ -17,7 +17,7 @@ public class PollService implements Services {
 
     @Override
     public List<Poll> findAll() {
-        return pollRepository.findAll();
+        return pollRepository.findAllByOrderByLastName();
     }
 
     @Override
